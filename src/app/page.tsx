@@ -1,6 +1,13 @@
+"use client";
+
+import { useState } from "react";
 import MetricCard from "@/components/MetricCard";
+import PlatformNode from "@/components/PlatformNode";
 
 export default function HeroSection() {
+  const [activeProvider, setActiveProvider] =
+    useState("AWS");
+
   return (
     <section className="min-h-screen bg-slate-950 text-white">
       <div className="mx-auto max-w-7xl px-6 py-20">
@@ -16,14 +23,15 @@ export default function HeroSection() {
             value="$48.2k"
           />
 
-          <MetricCard
-            label="Optimization"
-            value="72%"
-          />
+        </div>
 
-          <MetricCard
-            label="Clusters"
-            value="24"
+        <div className="relative mt-24 h-[500px] w-full">
+
+          <PlatformNode
+            name="AWS"
+            active={activeProvider === "AWS"}
+            onClick={() => setActiveProvider("AWS")}
+            className="left-[20%] top-[20%]"
           />
 
         </div>
