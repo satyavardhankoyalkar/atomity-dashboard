@@ -15,7 +15,7 @@ export default function HeroSection() {
 
       <div className="mx-auto max-w-7xl px-6 py-20">
 
-        <h1 className="text-5xl font-bold">
+        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold">
           Atomity Dashboard
         </h1>
          {/* LIVE MONITOR */}
@@ -37,7 +37,7 @@ export default function HeroSection() {
   name="GCP"
   active={activeProvider === "GCP"}
   onClick={() => setActiveProvider("GCP")}
-className="right-[10%] top-[28%]"/>
+className="right-[12%] top-[12%]"/>
 
 {/* Azure */}
 <PlatformNode
@@ -84,7 +84,7 @@ className="right-[10%] top-[28%]"/>
     y1="50%"
     x2="24%"
     y2="24%"
-    stroke="rgba(34,211,238,0.25)"
+    stroke="rgba(34,211,238,0.18)"
     strokeWidth="1.5"
     initial={{ pathLength: 0 }}
     animate={{ pathLength: 1 }}
@@ -112,7 +112,7 @@ className="right-[10%] top-[28%]"/>
     y1="50%"
     x2="76%"
     y2="26%"
-    stroke="rgba(34,211,238,0.25)"
+    stroke="rgba(34,211,238,0.18)"
     strokeWidth="1.5"
     initial={{ pathLength: 0 }}
     animate={{ pathLength: 1 }}
@@ -140,7 +140,7 @@ className="right-[10%] top-[28%]"/>
     y1="50%"
     x2="74%"
     y2="74%"
-    stroke="rgba(34,211,238,0.25)"
+    stroke="rgba(34,211,238,0.18)"
     strokeWidth="1.5"
     initial={{ pathLength: 0 }}
     animate={{ pathLength: 1 }}
@@ -168,7 +168,7 @@ className="right-[10%] top-[28%]"/>
     y1="50%"
     x2="28%"
     y2="74%"
-    stroke="rgba(34,211,238,0.25)"
+    stroke="rgba(34,211,238,0.18)"
     strokeWidth="1.5"
     initial={{ pathLength: 0 }}
     animate={{ pathLength: 1 }}
@@ -196,7 +196,7 @@ className="right-[10%] top-[28%]"/>
     y1="50%"
     x2="50%"
     y2="90%"
-    stroke="rgba(34,211,238,0.25)"
+    stroke="rgba(34,211,238,0.18)"
     strokeWidth="1.5"
     initial={{ pathLength: 0 }}
     animate={{ pathLength: 1 }}
@@ -218,7 +218,7 @@ className="right-[10%] top-[28%]"/>
     }}
   />
 
-</svg>
+</svg><div className="absolute h-40 w-40 rounded-full bg-cyan-400/10 blur-3xl" />
           {/* KUBERNETES CORE */}
           <motion.div
             initial={{ scale: 0.7, opacity: 0 }}
