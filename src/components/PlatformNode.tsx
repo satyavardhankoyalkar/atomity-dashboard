@@ -50,7 +50,7 @@ export default function PlatformNode({
         scale: 1.08,
         y: -6,
       }}
-      className={`absolute ${className}`}
+      className={`absolute z-30 ${className}`}
     >
       <div
         className={`group rounded-2xl border px-3 py-3 sm:px-5 sm:py-4 backdrop-blur-xl transition-all duration-500

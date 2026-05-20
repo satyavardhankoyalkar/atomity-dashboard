@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-
+import AnalyticsPanel from "./AnalyticsPanel";
 import LiveMonitor from "./LiveMonitor";
 import PlatformNode from "./PlatformNode";
 
@@ -62,7 +62,7 @@ className="right-[12%] top-[12%]"/>
   onClick={() => setActiveProvider("On-Prem")}
   className="left-1/2 bottom-[2%] -translate-x-1/2"
 />
-<svg className="absolute inset-0 h-full w-full">
+<svg className="pointer-events-none absolute inset-0 z-0 h-full w-full">
 
   <defs>
     <filter id="glow">
@@ -218,7 +218,7 @@ className="right-[12%] top-[12%]"/>
     }}
   />
 
-</svg><div className="absolute h-40 w-40 rounded-full bg-cyan-400/10 blur-3xl" />
+</svg><div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/10 blur-3xl" />
           {/* KUBERNETES CORE */}
           <motion.div
             initial={{ scale: 0.7, opacity: 0 }}
@@ -252,6 +252,9 @@ className="right-[12%] top-[12%]"/>
           </motion.div>
 
         </div>
+        <AnalyticsPanel
+  activeProvider={activeProvider}
+/>
 
       </div>
 
