@@ -21,7 +21,7 @@ export default function LiveMonitor({
         repeat: Infinity,
         ease: "easeInOut",
       }}
-      className="absolute right-4 top-4 z-20 sm:right-10 sm:top-8"
+      className="pointer-events-none absolute right-4 top-4 z-30 sm:right-6 sm:top-6"
     >
       <div className="rounded-2xl border border-emerald-400/20 bg-emerald-400/10 px-5 py-4 shadow-[0_0_40px_rgba(16,185,129,0.15)] backdrop-blur-xl">
 

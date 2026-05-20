@@ -18,11 +18,12 @@ export default function HeroSection() {
         <h1 className="text-5xl font-bold">
           Atomity Dashboard
         </h1>
+         {/* LIVE MONITOR */}
+          <LiveMonitor totalCost="48.2" />
 
         <div className="relative mt-24 h-[500px] w-full">
 
-          {/* LIVE MONITOR */}
-          <LiveMonitor totalCost="48.2" />
+         
 
           {/* AWS NODE */}
           <PlatformNode
@@ -36,8 +37,7 @@ export default function HeroSection() {
   name="GCP"
   active={activeProvider === "GCP"}
   onClick={() => setActiveProvider("GCP")}
-  className="right-[14%] top-[18%]"
-/>
+className="right-[10%] top-[28%]"/>
 
 {/* Azure */}
 <PlatformNode
@@ -62,6 +62,163 @@ export default function HeroSection() {
   onClick={() => setActiveProvider("On-Prem")}
   className="left-1/2 bottom-[2%] -translate-x-1/2"
 />
+<svg className="absolute inset-0 h-full w-full">
+
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur
+        stdDeviation="4"
+        result="coloredBlur"
+      />
+
+      <feMerge>
+        <feMergeNode in="coloredBlur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  {/* AWS LINE */}
+  <motion.line
+    x1="50%"
+    y1="50%"
+    x2="24%"
+    y2="24%"
+    stroke="rgba(34,211,238,0.25)"
+    strokeWidth="1.5"
+    initial={{ pathLength: 0 }}
+    animate={{ pathLength: 1 }}
+    transition={{ duration: 1 }}
+  />
+
+  <motion.circle
+    r="3"
+    fill="#22d3ee"
+    filter="url(#glow)"
+    animate={{
+      cx: ["24%", "50%"],
+      cy: ["24%", "50%"],
+    }}
+    transition={{
+      duration: 2,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+  />
+
+  {/* GCP LINE */}
+  <motion.line
+    x1="50%"
+    y1="50%"
+    x2="76%"
+    y2="26%"
+    stroke="rgba(34,211,238,0.25)"
+    strokeWidth="1.5"
+    initial={{ pathLength: 0 }}
+    animate={{ pathLength: 1 }}
+    transition={{ duration: 1.2 }}
+  />
+
+  <motion.circle
+    r="3"
+    fill="#22d3ee"
+    filter="url(#glow)"
+    animate={{
+      cx: ["76%", "50%"],
+      cy: ["26%", "50%"],
+    }}
+    transition={{
+      duration: 2.2,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+  />
+
+  {/* AZURE LINE */}
+  <motion.line
+    x1="50%"
+    y1="50%"
+    x2="74%"
+    y2="74%"
+    stroke="rgba(34,211,238,0.25)"
+    strokeWidth="1.5"
+    initial={{ pathLength: 0 }}
+    animate={{ pathLength: 1 }}
+    transition={{ duration: 1.4 }}
+  />
+
+  <motion.circle
+    r="3"
+    fill="#22d3ee"
+    filter="url(#glow)"
+    animate={{
+      cx: ["74%", "50%"],
+      cy: ["74%", "50%"],
+    }}
+    transition={{
+      duration: 2.4,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+  />
+
+  {/* OPTIMIZATION LINE */}
+  <motion.line
+    x1="50%"
+    y1="50%"
+    x2="28%"
+    y2="74%"
+    stroke="rgba(34,211,238,0.25)"
+    strokeWidth="1.5"
+    initial={{ pathLength: 0 }}
+    animate={{ pathLength: 1 }}
+    transition={{ duration: 1.6 }}
+  />
+
+  <motion.circle
+    r="3"
+    fill="#22d3ee"
+    filter="url(#glow)"
+    animate={{
+      cx: ["28%", "50%"],
+      cy: ["74%", "50%"],
+    }}
+    transition={{
+      duration: 2.6,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+  />
+
+  {/* ON PREM LINE */}
+  <motion.line
+    x1="50%"
+    y1="50%"
+    x2="50%"
+    y2="90%"
+    stroke="rgba(34,211,238,0.25)"
+    strokeWidth="1.5"
+    initial={{ pathLength: 0 }}
+    animate={{ pathLength: 1 }}
+    transition={{ duration: 1.8 }}
+  />
+
+  <motion.circle
+    r="3"
+    fill="#22d3ee"
+    filter="url(#glow)"
+    animate={{
+      cx: ["50%", "50%"],
+      cy: ["90%", "50%"],
+    }}
+    transition={{
+      duration: 2.8,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+  />
+
+</svg>
           {/* KUBERNETES CORE */}
           <motion.div
             initial={{ scale: 0.7, opacity: 0 }}
