@@ -31,7 +31,37 @@ export default function HeroSection() {
             onClick={() => setActiveProvider("AWS")}
             className="left-[12%] top-[12%]"
           />
+            {/* GCP */}
+<PlatformNode
+  name="GCP"
+  active={activeProvider === "GCP"}
+  onClick={() => setActiveProvider("GCP")}
+  className="right-[14%] top-[18%]"
+/>
 
+{/* Azure */}
+<PlatformNode
+  name="Azure"
+  active={activeProvider === "Azure"}
+  onClick={() => setActiveProvider("Azure")}
+  className="right-[18%] bottom-[18%]"
+/>
+
+{/* Optimization */}
+<PlatformNode
+  name="Optimization"
+  active={activeProvider === "Optimization"}
+  onClick={() => setActiveProvider("Optimization")}
+  className="left-[16%] bottom-[18%]"
+/>
+
+{/* On-Prem */}
+<PlatformNode
+  name="On-Prem"
+  active={activeProvider === "On-Prem"}
+  onClick={() => setActiveProvider("On-Prem")}
+  className="left-1/2 bottom-[2%] -translate-x-1/2"
+/>
           {/* KUBERNETES CORE */}
           <motion.div
             initial={{ scale: 0.7, opacity: 0 }}
