@@ -19,14 +19,12 @@ Built with Next.js, Framer Motion, React Query, and Tailwind CSS.
 
 ## Live Demo
 
-[Add Vercel URL Here]
-
+https://atomity-dashboard.vercel.app/
 ---
 
 ## GitHub Repository
 
-[Add GitHub Repository URL Here]
-
+https://github.com/satyavardhankoyalkar/atomity-dashboard
 ---
 
 # Feature Chosen
