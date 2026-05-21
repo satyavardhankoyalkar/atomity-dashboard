@@ -5,6 +5,17 @@ A modern animated cloud infrastructure dashboard inspired by Atomity's Kubernete
 Built with Next.js, Framer Motion, React Query, and Tailwind CSS.
 
 ---
+# Preview
+
+## Desktop View
+
+<img width="1507" height="1137" alt="wi_pages-to-jpg-0001" src="https://github.com/user-attachments/assets/d8e117bf-b7f2-4971-a911-09d2efa16697" />
+<img width="1527" height="840" alt="wi_pages-to-jpg-0002" src="https://github.com/user-attachments/assets/e6dca7ec-1469-45c0-8f52-21254654ecce" />
+
+## Mobile View
+
+<img width="1135" height="1510" alt="mo_pages-to-jpg-0001" src="https://github.com/user-attachments/assets/e00fd6d8-3ecc-4e55-82ab-d33ad5d7f537" />
+<img width="1143" height="974" alt="mo_pages-to-jpg-0002" src="https://github.com/user-attachments/assets/a5bd14e5-92e7-4569-bc12-09283ad9713e" />
 
 ## Live Demo
 
@@ -50,6 +61,11 @@ The goal was to create a polished SaaS-style frontend experience with intentiona
 
 The project was structured using reusable composable components.
 
+# Architecture & Component Structure
+
+The project was structured using reusable composable components.
+
+```text
 src/
 ├── components/
 │   ├── HeroSection.tsx
@@ -69,10 +85,10 @@ src/
 │   └── colors.ts
 │
 └── data/
-├── providerData.ts
-└── chartData.ts
+    ├── providerData.ts
+    └── chartData.ts
+```
 
----
 
 # Animation Approach
 
