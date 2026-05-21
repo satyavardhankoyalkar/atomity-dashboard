@@ -8,7 +8,7 @@ import {
     Tooltip,
 } from "recharts";
 import { useRef } from "react";
-
+import AnimatedCounter from "./AnimatedCounter";
 import {
     motion,
     useInView,
@@ -131,7 +131,13 @@ export default function AnalyticsPanel({
                             </p>
 
                             <h3 className="mt-2 text-2xl font-semibold text-white">
-                                {currentProvider.spend}
+                                <AnimatedCounter
+                                    value={parseFloat(
+                                        currentProvider.spend.replace("$", "")
+                                    )}
+                                    prefix="$"
+                                    suffix="k"
+                                />
                             </h3>
                         </motion.div>
 
@@ -156,7 +162,12 @@ export default function AnalyticsPanel({
                             </p>
 
                             <h3 className="mt-2 text-2xl font-semibold text-white">
-                                {currentProvider.efficiency}
+                                <AnimatedCounter
+                                    value={parseFloat(
+                                        currentProvider.efficiency
+                                    )}
+                                    suffix="%"
+                                />
                             </h3>
                         </motion.div>
 
@@ -181,7 +192,11 @@ export default function AnalyticsPanel({
                             </p>
 
                             <h3 className="mt-2 text-2xl font-semibold text-white">
-                                {currentProvider.clusters}
+                                <AnimatedCounter
+                                    value={parseFloat(
+                                        currentProvider.clusters
+                                    )}
+                                />
                             </h3>
                         </motion.div>
 
