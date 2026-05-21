@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
+import { useReducedMotion } from "framer-motion";
 type LiveMonitorProps = {
     totalCost: string;
 };
@@ -9,13 +9,21 @@ type LiveMonitorProps = {
 export default function LiveMonitor({
     totalCost,
 }: LiveMonitorProps) {
+    const shouldReduceMotion =
+    useReducedMotion();
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{
-                opacity: 1,
-                y: [0, -8, 0],
-            }}
+            animate={
+  shouldReduceMotion
+    ? {
+        opacity: 1,
+      }
+    : {
+        opacity: 1,
+        y: [0, -8, 0],
+      }
+}
             transition={{
                 duration: 4,
                 repeat: Infinity,
@@ -28,10 +36,14 @@ export default function LiveMonitor({
                 <div className="flex items-center gap-3">
 
                     <motion.div
-                        animate={{
-                            scale: [1, 1.3, 1],
-                            opacity: [0.7, 1, 0.7],
-                        }}
+                        animate={
+  shouldReduceMotion
+    ? {}
+    : {
+        scale: [1, 1.3, 1],
+        opacity: [0.7, 1, 0.7],
+      }
+}
                         transition={{
                             duration: 1.8,
                             repeat: Infinity,

@@ -11,7 +11,8 @@ import { useRef } from "react";
 import AnimatedCounter from "./AnimatedCounter";
 import {
     motion,
-    useInView,
+    useReducedMotion,
+    useInView
 } from "framer-motion";
 import { chartData } from "@/data/chartData";
 type AnalyticsPanelProps = {
@@ -19,8 +20,11 @@ type AnalyticsPanelProps = {
 };
 
 export default function AnalyticsPanel({
+
     activeProvider,
 }: AnalyticsPanelProps) {
+    const shouldReduceMotion =
+        useReducedMotion();
     const currentProvider =
         providerData[
         activeProvider as keyof typeof providerData
@@ -48,12 +52,16 @@ export default function AnalyticsPanel({
                 y: 80,
             }}
             animate={
-                isInView
+                shouldReduceMotion
                     ? {
                         opacity: 1,
-                        y: 0,
                     }
-                    : {}
+                    : isInView
+                        ? {
+                            opacity: 1,
+                            y: 0,
+                        }
+                        : {}
             }
             transition={{
                 duration: 0.9,

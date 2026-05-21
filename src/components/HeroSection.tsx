@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import AnalyticsPanel from "./AnalyticsPanel";
 import LiveMonitor from "./LiveMonitor";
 import PlatformNode from "./PlatformNode";
-
+import { motion,useReducedMotion } from "framer-motion";
 export default function HeroSection() {
     const [activeProvider, setActiveProvider] =
         useState("AWS");
-
+    const shouldReduceMotion =
+    useReducedMotion();
     return (
         <section className="min-h-screen bg-slate-950 text-white">
 
@@ -95,7 +95,7 @@ export default function HeroSection() {
                             r="3"
                             fill="#22d3ee"
                             filter="url(#glow)"
-                            animate={{
+                            animate={shouldReduceMotion?{}:{
                                 cx: ["24%", "50%"],
                                 cy: ["24%", "50%"],
                             }}
@@ -123,7 +123,7 @@ export default function HeroSection() {
                             r="3"
                             fill="#22d3ee"
                             filter="url(#glow)"
-                            animate={{
+                            animate={shouldReduceMotion?{}:{
                                 cx: ["76%", "50%"],
                                 cy: ["26%", "50%"],
                             }}
@@ -151,7 +151,7 @@ export default function HeroSection() {
                             r="3"
                             fill="#22d3ee"
                             filter="url(#glow)"
-                            animate={{
+                            animate={shouldReduceMotion?{}:{
                                 cx: ["74%", "50%"],
                                 cy: ["74%", "50%"],
                             }}
@@ -179,7 +179,7 @@ export default function HeroSection() {
                             r="3"
                             fill="#22d3ee"
                             filter="url(#glow)"
-                            animate={{
+                            animate={shouldReduceMotion?{}:{
                                 cx: ["28%", "50%"],
                                 cy: ["74%", "50%"],
                             }}
@@ -207,7 +207,7 @@ export default function HeroSection() {
                             r="3"
                             fill="#22d3ee"
                             filter="url(#glow)"
-                            animate={{
+                            animate={shouldReduceMotion?{}:{
                                 cx: ["50%", "50%"],
                                 cy: ["90%", "50%"],
                             }}
@@ -222,7 +222,16 @@ export default function HeroSection() {
                     {/* KUBERNETES CORE */}
                     <motion.div
                         initial={{ scale: 0.7, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
+                        animate={
+  shouldReduceMotion
+    ? {
+        opacity: 1,
+      }
+    : {
+        scale: 1,
+        opacity: 1,
+      }
+}
                         transition={{
                             duration: 1,
                             delay: 0.3,
@@ -232,7 +241,11 @@ export default function HeroSection() {
 
                         {/* ROTATING RING */}
                         <motion.div
-                            animate={{ rotate: 360 }}
+                            animate={
+  shouldReduceMotion
+    ? {}
+    : { rotate: 360 }
+}
                             transition={{
                                 repeat: Infinity,
                                 duration: 20,

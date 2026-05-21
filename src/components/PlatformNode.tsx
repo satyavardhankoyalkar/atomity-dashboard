@@ -7,7 +7,7 @@ import {
     Server,
     ShieldCheck,
 } from "lucide-react";
-
+import { useReducedMotion } from "framer-motion";
 type PlatformNodeProps = {
     name: string;
     active: boolean;
@@ -31,16 +31,24 @@ export default function PlatformNode({
 }: PlatformNodeProps) {
     const Icon =
         providerIcons[name as keyof typeof providerIcons];
-
+    const shouldReduceMotion =
+        useReducedMotion();
     return (
         <motion.button
             onClick={onClick}
             initial={{ opacity: 0, scale: 0.7 }}
-            animate={{
-                opacity: 1,
-                scale: 1,
-                y: [0, -10, 0],
-            }}
+            animate={
+                shouldReduceMotion
+                    ? {
+                        opacity: 1,
+                        scale: 1,
+                    }
+                    : {
+                        opacity: 1,
+                        scale: 1,
+                        y: [0, -10, 0],
+                    }
+            }
             transition={{
                 duration: 5,
                 repeat: Infinity,
@@ -62,9 +70,13 @@ export default function PlatformNode({
                 <div className="flex items-center gap-3">
 
                     <motion.div
-                        animate={{
-                            scale: [1, 1.08, 1],
-                        }}
+                        animate={
+                            shouldReduceMotion
+                                ? {}
+                                : {
+                                    scale: [1, 1.08, 1],
+                                }
+                        }
                         transition={{
                             duration: 2,
                             repeat: Infinity,
