@@ -1,6 +1,6 @@
 # Atomity Frontend Engineering Challenge
 
-A modern animated cloud infrastructure dashboard inspired by Atomity's Kubernetes optimization platform.
+An animated cloud infrastructure topology dashboard inspired by Atomity's Kubernetes optimization platform.
 
 Built with Next.js, Framer Motion, React Query, and Tailwind CSS.
 
@@ -19,12 +19,12 @@ Built with Next.js, Framer Motion, React Query, and Tailwind CSS.
 
 ## Live Demo
 
-https://atomity-dashboard.vercel.app/
+[Live Demo](https://atomity-dashboard.vercel.app/)
 ---
 
 ## GitHub Repository
 
-https://github.com/satyavardhankoyalkar/atomity-dashboard
+[GitHub Repository](https://github.com/satyavardhankoyalkar/atomity-dashboard)
 ---
 
 # Feature Chosen
@@ -129,6 +129,7 @@ Accessibility considerations included:
 * Keyboard-accessible interactive elements
 * Readable contrast and typography hierarchy
 
+Animations respect the user's operating system reduced motion preferences using Framer Motion's useReducedMotion hook.
 Animations automatically simplify when reduced motion preferences are enabled at the operating system level.
 
 ---
