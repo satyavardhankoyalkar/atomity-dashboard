@@ -1,5 +1,14 @@
 "use client";
 import useProducts from "@/hooks/useProducts";
+import { providerData } from "@/data/providerData";
+import {
+  AreaChart,
+  Area,
+  ResponsiveContainer,
+  Tooltip,
+} from "recharts";
+
+import { chartData } from "@/data/chartData";
 type AnalyticsPanelProps = {
     activeProvider: string;
 };
@@ -7,6 +16,14 @@ type AnalyticsPanelProps = {
 export default function AnalyticsPanel({
     activeProvider,
 }: AnalyticsPanelProps) {
+    const currentProvider =
+  providerData[
+    activeProvider as keyof typeof providerData
+  ];
+  const activeChartData =
+  chartData[
+    activeProvider as keyof typeof chartData
+  ];
     const {
         data,
         isLoading,
@@ -15,7 +32,7 @@ export default function AnalyticsPanel({
     return (
         <section className="mt-24">
 
-            <div className="rounded-[32px] border border-cyan-400/10 bg-cyan-400/5 p-8 backdrop-blur-xl">
+            <div className={`rounded-[32px] border border-white/10 bg-gradient-to-br ${currentProvider.color} p-8 backdrop-blur-xl transition-all duration-700`}>
 
                 <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
 
@@ -57,7 +74,7 @@ export default function AnalyticsPanel({
                             </p>
 
                             <h3 className="mt-2 text-2xl font-semibold text-white">
-                                $48.2k
+                                {currentProvider.spend}
                             </h3>
                         </div>
 
@@ -67,7 +84,7 @@ export default function AnalyticsPanel({
                             </p>
 
                             <h3 className="mt-2 text-2xl font-semibold text-white">
-                                82%
+                                {currentProvider.efficiency}
                             </h3>
                         </div>
 
@@ -77,14 +94,66 @@ export default function AnalyticsPanel({
                             </p>
 
                             <h3 className="mt-2 text-2xl font-semibold text-white">
-                                12
+                                {currentProvider.clusters}
                             </h3>
                         </div>
 
                     </div>
 
                 </div>
+<div className="mt-12 h-[300px] w-full">
 
+  <ResponsiveContainer width="100%" height="100%">
+
+    <AreaChart data={activeChartData}>
+
+      <defs>
+
+        <linearGradient
+          id="colorCost"
+          x1="0"
+          y1="0"
+          x2="0"
+          y2="1"
+        >
+          <stop
+            offset="0%"
+            stopColor="#22d3ee"
+            stopOpacity={0.4}
+          />
+
+          <stop
+            offset="100%"
+            stopColor="#22d3ee"
+            stopOpacity={0}
+          />
+
+        </linearGradient>
+
+      </defs>
+
+      <Tooltip
+        contentStyle={{
+          background: "#08111f",
+          border:
+            "1px solid rgba(255,255,255,0.08)",
+          borderRadius: "16px",
+        }}
+      />
+
+      <Area
+        type="monotone"
+        dataKey="cost"
+        stroke="#22d3ee"
+        strokeWidth={3}
+        fill="url(#colorCost)"
+      />
+
+    </AreaChart>
+
+  </ResponsiveContainer>
+
+</div>
             </div>
 
         </section>
