@@ -15,13 +15,13 @@ export default function HeroSection() {
 
             <div className="mx-auto max-w-7xl px-6 py-20">
 
-                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold">
+                <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold">
                     Atomity Dashboard
                 </h1>
                 {/* LIVE MONITOR */}
                 <LiveMonitor totalCost="48.2" />
 
-                <div className="relative mt-24 h-[500px] w-full">
+                <div className="relative mt-16 sm:mt-24 h-[420px] sm:h-[500px] w-full">
 
 
 
@@ -30,21 +30,39 @@ export default function HeroSection() {
                         name="AWS"
                         active={activeProvider === "AWS"}
                         onClick={() => setActiveProvider("AWS")}
-                        className="left-[12%] top-[12%]"
+                        className="
+left-[8%]
+top-[18%]
+
+sm:left-[12%]
+sm:top-[12%]
+"
                     />
                     {/* GCP */}
                     <PlatformNode
                         name="GCP"
                         active={activeProvider === "GCP"}
                         onClick={() => setActiveProvider("GCP")}
-                        className="right-[12%] top-[12%]" />
+                        className="
+right-[8%]
+top-[18%]
+
+sm:right-[12%]
+sm:top-[12%]
+" />
 
                     {/* Azure */}
                     <PlatformNode
                         name="Azure"
                         active={activeProvider === "Azure"}
                         onClick={() => setActiveProvider("Azure")}
-                        className="right-[18%] bottom-[18%]"
+                        className="
+right-[4%]
+bottom-[12%]
+
+sm:right-[18%]
+sm:bottom-[18%]
+"
                     />
 
                     {/* Optimization */}
@@ -52,7 +70,13 @@ export default function HeroSection() {
                         name="Optimization"
                         active={activeProvider === "Optimization"}
                         onClick={() => setActiveProvider("Optimization")}
-                        className="left-[16%] bottom-[18%]"
+                        className="
+left-[4%]
+bottom-[12%]
+
+sm:left-[16%]
+sm:bottom-[18%]
+"
                     />
 
                     {/* On-Prem */}
